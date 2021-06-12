@@ -32,7 +32,6 @@ body {
 }
 
 #appContainer {
-  display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
@@ -42,12 +41,10 @@ body {
   display: grid;
   width: 100%;
   height: 100%;
-  background: #555;
   grid-template-rows: repeat(8, 1fr);
   grid-template-columns: repeat(8, 1fr);
-  background: #552;
-  padding: 15px;
-  grid-gap: 5px;
+  background: rgb(240, 240, 166);
+  grid-gap: 2px;
 }
 
 .container {
@@ -61,12 +58,39 @@ body {
 .square {
   width: 100%;
   height: 100%;
+  position: relative; 
+}
+
+.cream {
+  background: rgb(221, 209, 170);
+}
+
+.tan {
+  background: rgb(159, 126, 70);
 }
 
 .red {
-  background: #c33;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  border-radius: 50%;
+  background: red;
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
 }
-
-.black {
-  background: #222;
+  
+  .black {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  border-radius: 50%;
+  background: black;
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
 }
