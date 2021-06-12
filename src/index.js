@@ -1,1 +1,3 @@
-console.log('test');
+import gridGenerate from './render';
+
+gridGenerate();
