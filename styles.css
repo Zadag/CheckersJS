@@ -1,5 +1,97 @@
-div {
-  height: 50vh;
-  width: 50vw;
-  background-color: red;
+@media (prefers-color-scheme: no-preference) {
+  :root {
+    --bg-base: #fff;
+    --font-color: #222;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-base: #fff;
+    --font-color: #222;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-base: #0e1216;
+    --font-color: #aaa;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: var(--bg-base);
+  margin: 0;
+  height: 100%;
+  font-family: sans-serif;
+  color: var(--font-color);
+}
+
+#appContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.board {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  background: rgb(240, 240, 166);
+  grid-gap: 2px;
+}
+
+.container {
+  max-width: 50rem;
+  max-height: 50rem;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.square {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.cream {
+  background: rgb(221, 209, 170);
+}
+
+.tan {
+  background: rgb(159, 126, 70);
+}
+
+.red {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  border-radius: 50%;
+  background: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.black {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  border-radius: 50%;
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
