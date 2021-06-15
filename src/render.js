@@ -14,7 +14,7 @@ export default function gridGenerate() {
       board.append(square);
 
 
-      if (((i + j) % 2 === 0) && (i < 3)) {
+      if (((i + j) % 2 === 1) && (i < 3)) {
         circle.classList.add('red');
       };
 
