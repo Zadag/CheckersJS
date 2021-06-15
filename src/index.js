@@ -1,5 +1,3 @@
-// KB
-console.log('test');
+import gridGenerate from './render';
 
-// T-McVee
-console.log('Tim\'s test');
+gridGenerate();
