@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-console.log("test"),console.log("Tim's test");
-=======
-(()=>{"use strict";!function(){const e=document.getElementById("board");for(let t=0;t<8;t++)for(let d=0;d<8;d++){const s=document.createElement("div"),a=document.createElement("div");s.id=`${t}x${d}`,s.classList.add("square"),(t+d)%2==0?s.classList.add("cream"):s.classList.add("tan"),e.append(s),(t+d)%2==0&&t<3&&a.classList.add("red"),(t+d)%2==1&&t>4&&a.classList.add("black"),s.append(a)}}()})();
->>>>>>> 9a1745bc2746b873102308bea69cb3f8ff17df20
+(()=>{"use strict";!function(){const e=document.getElementById("board");for(let s=0;s<8;s++)for(let a=0;a<8;a++){const t=document.createElement("div"),d=document.createElement("div");t.id=`${s}x${a}`,t.classList.add("square"),(s+a)%2==0?t.classList.add("cream"):t.classList.add("tan"),e.append(t),(s+a)%2==0&&s<3&&d.classList.add("red"),(s+a)%2==1&&s>4&&d.classList.add("black"),t.append(d)}}(),((e,s)=>{const a=[],t={hasMarker:!1},d=()=>{for(let d=0;d<8;d++){const c=[];for(let a=0;a<8;a++){const o=t;c.push(o),(d+a)%2==1&&d<3&&(o.hasMarker=e),(d+a)%2==1&&d>4&&(o.hasMarker=s)}a.push(c)}console.log("Gameboard initialized")};d()})({color:"red",isKing:!1},{color:"black",isKing:!1})})();
