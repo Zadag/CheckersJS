@@ -1,31 +1,24 @@
-const Gameboard = ((red, black) => {
+const Gameboard = ((markerFactory) => {
   const board = [];
-  const squareInfo = { hasMarker: false };
 
   const initialize = () => {
     for (let i = 0; i < 8; i++) {
       const row = [];
 
       for (let j = 0; j < 8; j++) {
-        const square = {};
+        const square = { hasMarker: false };
 
         if (((i + j) % 2 === 1) && (i < 3)) {
           square.hasMarker = true;
-          square.marker = red;
-          row.push(square);
-          continue;
+          square.marker = markerFactory('red');
         }
 
         if (((i + j) % 2 === 1) && (i > 4)) {
           square.hasMarker = true;
-          square.marker = black;
-          row.push(square);
-          continue;
-
-        } else {
-          square.hasMarker = false;
-          row.push(square);
+          square.marker = markerFactory('black');
         }
+
+        row.push(square);
       }
       board.push(row);
     }
@@ -45,7 +38,8 @@ const Gameboard = ((red, black) => {
     const [x, y] = index;
     // const htmlField = document.getElementById(`${x}x${y}`);
     // htmlfield.removeChild(htmlfield.childNodes[0]);
-    board[x][y] = squareInfo;
+    board[x][y].hasMarker = false;
+    board[x][y].marker = {};
   };
 
   const updateSquare = (index, marker) => {
