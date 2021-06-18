@@ -40,7 +40,6 @@ const Gameboard = ((markerFactory) => {
     // htmlfield.removeChild(htmlfield.childNodes[0]);
     board[x][y].hasMarker = false;
     delete board[x][y].marker;
-    //board[x][y].marker = {};
   };
 
   const updateSquare = (index, marker) => {
@@ -64,7 +63,7 @@ const Gameboard = ((markerFactory) => {
 
     if (!marker) {
       board[x][y].hasMarker = false;
-      board[x][y].marker = {};
+      delete board[x][y].marker;
       // htmlfield.removeChild(htmlfield.childNodes[0]);
     }
   };
@@ -76,7 +75,7 @@ const Gameboard = ((markerFactory) => {
   };
 
   return {
-    board, // remove board from public variables after development
+    board, // remove board from public after development
     getSquare,
     updateSquare,
     clearSquare,
