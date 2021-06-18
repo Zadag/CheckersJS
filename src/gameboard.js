@@ -39,7 +39,8 @@ const Gameboard = ((markerFactory) => {
     // const htmlField = document.getElementById(`${x}x${y}`);
     // htmlfield.removeChild(htmlfield.childNodes[0]);
     board[x][y].hasMarker = false;
-    board[x][y].marker = {};
+    delete board[x][y].marker;
+    //board[x][y].marker = {};
   };
 
   const updateSquare = (index, marker) => {
@@ -55,13 +56,15 @@ const Gameboard = ((markerFactory) => {
     // const htmlfield = document.getElementById(`${x}x${y}`);
 
     if (!board[x][y].hasMarker && marker) {
-      board[x][y] = marker;
+      board[x][y].hasMarker = true;
+      board[x][y].marker = marker;
       // htmlfield.childNodes[0] = marker;
       return;
     }
 
     if (!marker) {
-      board[x][y] = '';
+      board[x][y].hasMarker = false;
+      board[x][y].marker = {};
       // htmlfield.removeChild(htmlfield.childNodes[0]);
     }
   };
