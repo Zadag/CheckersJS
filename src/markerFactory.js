@@ -1,4 +1,4 @@
-const MarkerFactory = (color) => {
+const markerFactory = (color) => {
   const isKing = false;
   return {
     color,
@@ -6,4 +6,4 @@ const MarkerFactory = (color) => {
   };
 };
 
-export default MarkerFactory;
+export default markerFactory;
