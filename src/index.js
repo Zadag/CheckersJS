@@ -1,7 +1,7 @@
 import gridGenerate from './render';
 import Gameboard from './gameboard';
-import MarkerFactory from './markerFactory';
+import markerFactory from './markerFactory';
 
 gridGenerate();
 
-const gameboard = Gameboard(MarkerFactory('red'), MarkerFactory('black'));
+const gameboard = Gameboard(markerFactory);
