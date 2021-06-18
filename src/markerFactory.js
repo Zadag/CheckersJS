@@ -1,8 +1,8 @@
-const markerFactory = (color) => {
-  const isKing = false;
+const markerFactory = (isRed = false) => {
+  let isKing = false;
 
   return {
-    color,
+    isRed,
     isKing,
   };
 };
