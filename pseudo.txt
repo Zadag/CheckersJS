@@ -1,0 +1,87 @@
+
+  /* ==== Gameboard(markerFactory) ====
+    Purpose: Represents the boardoard. Records the location of each marker
+
+    Arguments:
+     - markerFactory: Factory. Used to create initial game markers.
+
+    Properties:
+     - board: Private. 2D array which records the location of each marker.
+
+    Methods:
+    - initialize():
+      Private. Called when object is first created.
+      Populates board with markers, arranged ready for classic checkers game.
+
+    - getSquare(index):
+      Public. Returns the contents of board at a given index
+
+    - updateSquare(index, marker):
+      Public. Updates the contentse of board at the given index with marker.
+      If marker is undefined it will clear the specified square.
+
+    - reset():
+      Public. Resets the board, ready for a new game.
+  */
+
+  /* ==== markerFactory(isRed) ====
+    purpose: creates an object which represents a marker.
+
+    Arguments:
+      - isRed: Boolean. Will be used to determine which player the marker belongs to
+
+    Properties:
+      - isRed: Boolean. Will be used to determine which player the marker belongs to
+      - isKing:
+        Private. Boolean. Will be used to determine how the marker moves along the y axis.
+        defaults to false
+
+    Methods:
+      - makeKing():
+        Public. sets the isKing property to true.
+  */
+
+  /* ==== playerFactory(isRed) ====
+    Purpose: Represents each player.
+
+    Arguments:
+      - isRed:
+        Boolean. Represents which set of markers belongs to this player.
+
+    Properties:
+      - isRed:
+        Public. Boolean. Represents which set of markers belongs to this player.
+
+      - markersTaken:
+        Private. Number. Records how many markers player has taken.
+        If === 12 player wins.
+
+    Methods:
+      - 
+  */
+
+  /* ==== gameController(playerFactory) ====
+    Purpose: Controls the flow of the game. Calls the other modules as needed to progress through the game.
+
+    Arguments: 
+      - playerFactory: used to create an object for each player.
+
+    Properties:
+      - playerRed: Public. The red player instance of playerFactory.
+      - playerBlack: Public. The black player instance of playerFactory.
+
+    Methods:
+      - getPlayer(): returns the  
+
+  */
+
+  /* displayController()
+    Purpose: Updates the display to reflect the current state of the js modules. 
+
+    Arguments:
+
+    Properties:
+
+    Methods:
+  
+  */
