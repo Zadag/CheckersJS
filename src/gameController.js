@@ -12,6 +12,13 @@ const gameController = ((playerFactory, gameboard, display) => {
     redPlayersTurn = !redPlayersTurn;
 
     // Check active player's markers for available moves
+
+    gameboard.forEach((square) => {
+      // Check if square has marker
+      if (square != null && square.isRed === redPlayersTurn) {
+        console.log(square);
+      }
+    });
   };
 });
 
