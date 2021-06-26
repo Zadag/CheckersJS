@@ -76,7 +76,8 @@
       - playerBlack: Public. The black player instance of playerFactory.
 
     Methods:
-      - getPlayer(): returns the  
+      - getPlayer():
+        Public. Returns playerRed or playerBlack.
 
   */
 
