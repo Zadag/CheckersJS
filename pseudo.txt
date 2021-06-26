@@ -54,10 +54,15 @@
 
       - markersTaken:
         Private. Number. Records how many markers player has taken.
-        If === 12 player wins.
+        If === 12 player wins. -- Should this be an array containing each marker the player has taken?
 
     Methods:
-      - 
+      - takeMarker:
+        public. Called by gameController when player takes a marker.
+        increments markersTaken by 1.
+      
+      - checkMarkersTaken: 
+        Public. Returns the value of markersTaken.
   */
 
   /* ==== gameController(playerFactory) ====
@@ -71,7 +76,8 @@
       - playerBlack: Public. The black player instance of playerFactory.
 
     Methods:
-      - getPlayer(): returns the  
+      - getPlayer():
+        Public. Returns playerRed or playerBlack.
 
   */
 
