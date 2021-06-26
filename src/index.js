@@ -1,7 +1,7 @@
 import gridGenerate from './render';
 import Gameboard from './gameboard';
 import markerFactory from './markerFactory';
-import gameController from './gameController';
+import playerFactory from './playerFactory';
 
 gridGenerate();
 
