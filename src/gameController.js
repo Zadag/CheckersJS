@@ -1,7 +1,7 @@
 const gameController = ((playerFactory, gameboard, display) => {
   const playerRed = playerFactory(true);
   const playerBlack = playerFactory(false);
-  let redPlayersTurn = true;
+  let redPlayersTurn = false;
 
   function getPlayer(redPlayer) {
     return redPlayer ? playerRed : playerBlack;
@@ -12,12 +12,42 @@ const gameController = ((playerFactory, gameboard, display) => {
     // if no moves are available return null
     const [x, y] = index;
     const { isRed, isKing } = gameboard.getSquare(index);
-
     const direction = isRed ? 1 : -1;
+    const availableMoves = [];
+    const moves = [
+      { x: x + direction, y: y + 1 },
+      { x: x + direction, y: y - 1 },
+      { x: x - direction, y: y + 1 },
+      { x: x - direction, y: y - 1 },
+    ];
 
-    if (x + direction <= 7 && x + direction >= 0) {
-      gameboard.getSquare([x + direction, y])
+    for (let i = 0; i < moves.length; i++) {
+      if (i > 1 && !isKing) continue;
+      if (moves[i].x < 0 || moves[i].x > 7) continue;
+      if (moves[i].y < 0 || moves[i].y > 7) continue;
+      if (gameboard.getSquare([moves[i].x, moves[i].y]) != null) continue;
+      availableMoves.push([moves[i].x, moves[i].y]);
     }
+
+  /*
+    function checkSurroundingSquares(xAxis) {
+      if (x + xAxis <= 7 && x + xAxis >= 0) {
+        if (y + 1 <= 7 && y + 1 >= 0) {
+          if (gameboard.getSquare([x + xAxis, y + 1]) == null) {
+            moves.push([x + xAxis, y + 1]);
+          }
+        }
+  
+        if (y - 1 <= 7 && y - 1 >= 0) {
+          if (gameboard.getSquare([x + xAxis, y - 1]) == null) {
+            moves.push([x + xAxis, y - 1]);
+          }
+        }
+      }
+    }
+     */
+
+    return availableMoves.length > 0 ? availableMoves : null;
   };
 
   const takeTurn = () => {
@@ -30,7 +60,8 @@ const gameController = ((playerFactory, gameboard, display) => {
 
     // Check current player's markers for available moves
     markerLocations.forEach((index) => {
-      getAvailableMoves(index);
+      const availableMoves = getAvailableMoves(index);
+      console.log(availableMoves);
     });
 
     // TBD
