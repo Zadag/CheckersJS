@@ -56,6 +56,21 @@ const Gameboard = ((markerFactory) => {
     }
   };
 
+  const getMarkerLocations = (isRed) => {
+    // Return an array with the xy index of each marker belonging to the given player
+    const locations = [];
+
+    for (let i = 0; i < board.length; i++) {
+      for (let j = 0; j < board[i].length; j++) {
+        if (board[i][j] != null && board[i][j].isRed === isRed) {
+          locations.push([i, j]);
+        }
+      }
+    }
+
+    return locations;
+  };
+
   const reset = () => {
     // Reset board to initial state, ready for a new game
     board.splice(0, board.length);
@@ -63,8 +78,10 @@ const Gameboard = ((markerFactory) => {
   };
 
   return {
+    board,
     getSquare,
     updateSquare,
+    getMarkerLocations,
     reset,
   };
 });

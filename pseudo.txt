@@ -1,5 +1,6 @@
+/* eslint-disable */
 
-  /* ==== Gameboard(markerFactory) ====
+/* ==== Gameboard(markerFactory) ====
     Purpose: Represents the boardoard. Records the location of each marker
 
     Arguments:
@@ -24,7 +25,7 @@
       Public. Resets the board, ready for a new game.
   */
 
-  /* ==== markerFactory(isRed) ====
+/* ==== markerFactory(isRed) ====
     purpose: creates an object which represents a marker.
 
     Arguments:
@@ -41,7 +42,7 @@
         Public. sets the isKing property to true.
   */
 
-  /* ==== playerFactory(isRed) ====
+/* ==== playerFactory(isRed) ====
     Purpose: Represents each player.
 
     Arguments:
@@ -54,16 +55,22 @@
 
       - markersTaken:
         Private. Number. Records how many markers player has taken.
-        If === 12 player wins.
+        If === 12 player wins. -- Should this be an array containing each marker the player has taken?
 
     Methods:
-      - 
+      - takeMarker:
+        public. Called by gameController when player takes a marker.
+        increments markersTaken by 1.
+
+      - checkMarkersTaken:
+        Public. Returns the value of markersTaken.
   */
 
-  /* ==== gameController(playerFactory) ====
-    Purpose: Controls the flow of the game. Calls the other modules as needed to progress through the game.
+/* ==== gameController(playerFactory) ====
+    Purpose: Controls the flow of the game.
+    Calls the other modules as needed to progress through the game.
 
-    Arguments: 
+    Arguments:
       - playerFactory: used to create an object for each player.
 
     Properties:
@@ -71,17 +78,20 @@
       - playerBlack: Public. The black player instance of playerFactory.
 
     Methods:
-      - getPlayer(): returns the  
+      - getPlayer():
+        Public. Returns playerRed or playerBlack.
+
+      - takeTurn():
+        Private? Steps through the required logic to complete a turn
 
   */
 
-  /* displayController()
-    Purpose: Updates the display to reflect the current state of the js modules. 
+/* displayController()
+    Purpose: Updates the display to reflect the current state of the js modules.
 
     Arguments:
 
     Properties:
 
     Methods:
-  
-  */
+*/
